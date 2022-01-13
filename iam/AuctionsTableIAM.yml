@@ -8,6 +8,5 @@ AuctionsTableIAM:
     - dynamoDb:Query
   Resource:
     - ${self:custom.AuctionsTable.arn}
-    #- 'arn:aws:dynamodb:eu-west-1:057158775579:table/AuctionsTable-dev/index/*'
     - !Join ['/', [ '${self:custom.AuctionsTable.arn}', 'index', 'statusAndEndDate'],]
     
